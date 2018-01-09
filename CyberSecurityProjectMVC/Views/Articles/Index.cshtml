@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CyberSecurityProjectMVC.Models.Article>
+
+@{
+    ViewData["Title"] = "Articles";
+}
+
+<div class="main_bg">
+    <!-- start main -->
+    <div class="container">
+        <h1 class="text-center">@ViewData["Title"] </h1>
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <div class="main">
+@foreach (var item in Model)
+{
+            <div class="images_1_of_4 text-center">
+                <h4><a>@Html.DisplayFor(modelItem => item.Title)</a></h4>
+                <p class="para">@Html.DisplayFor(modelItem => item.Description)</p>
+                <a asp-action="Details" asp-route-id="@item.ArticleID" class="fa-btn btn-1 btn-1e">read more</a>
+                <br/>
+                <a asp-action="Edit" asp-route-id="@item.ArticleID">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.ArticleID">Delete</a>
+            </div>
+            <hr />
+}
+        </div>
+    </div>
+</div><!-- end main -->
