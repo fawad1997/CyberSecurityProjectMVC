@@ -11,9 +11,10 @@ using System;
 namespace CyberSecurityProjectMVC.Migrations
 {
     [DbContext(typeof(CyberSecurityContext))]
-    partial class CyberSecurityContextModelSnapshot : ModelSnapshot
+    [Migration("20180110073216_MaxLengthOnNames")]
+    partial class MaxLengthOnNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
